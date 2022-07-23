@@ -7,7 +7,30 @@
   <script src="main.js"></script>
   <title>Weather App</title>
 </head>
+
 <body>
-  
+  <div id="header-container">
+    <h3>Weather App</h2>
+  </div>
+
+  <div id="body-container">
+    <div id="weather-container">
+      <h2 class="location-label">London,uk</h2>
+      <h3 class="temperature-label">0 &#176;C</h3>
+      <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather image">
+      
+      <input type="text" name="location" id="location-input" required>
+      <input type="button" value="Enter">
+    </div>
+
+    <div id="date-container">
+      <h2 class="date-label"></h2>
+      <h3 class="time-label"></h3>
+    </div>
+
+    <div id="forecast-container">
+
+    </div>
+  </div>
 </body>
 </html>

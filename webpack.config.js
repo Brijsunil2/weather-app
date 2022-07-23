@@ -13,5 +13,17 @@ module.exports = {
     },
     compress: true,
     port: 9000,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      }
+    ]
   }
 };

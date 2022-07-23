@@ -27,7 +27,7 @@ async function getCurrWeather(location) {
     console.log('Error: Unable to fetch weather data - ', err);
   }
 
-  console.log(currWeatherData);
+  // console.log(currWeatherData);
   return currWeatherData;
 }
 
@@ -42,7 +42,7 @@ async function getCurrWeatherByCoords(latitude, longitude) {
     console.log('Error: Unable to fetch weather data - ', err);
   }
 
-  console.log(currWeatherData);
+  // console.log(currWeatherData);
   return currWeatherData;
 }
 
@@ -57,7 +57,7 @@ async function getCurrForecast(location) {
     console.log('Error: Unable to fetch forecast data - ', err);
   }
 
-  console.log(currForecastData);
+  // console.log(currForecastData);
   return currForecastData;
 }
 
@@ -72,7 +72,7 @@ async function getCurrForecastByCoords(latitude, longitude) {
     console.log('Error: Unable to fetch forecast data - ', err);
   }
 
-  console.log(currForecastData);
+  // console.log(currForecastData);
   return currForecastData;
 }
 
