@@ -8,10 +8,39 @@ function getAPIForecastURL(location) {
   return `https://api.openweathermap.org/data/2.5/forecast?q=${location}&APPID=${key}`;
 }
 
+function getAPIWeatherURLByCoords(latitude, longitude) {
+  return `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
+}
+
+function getAPIForecastURLByCoords(latitude, longitude) {
+  return `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${key}`;
+}
+
 async function getCurrWeather(location) {
   const url = getAPIWeatherURL(location);
-  const response = await fetch(url);
-  const currWeatherData = await response.json();
+  var currWeatherData = {};
+
+  try {
+    const response = await fetch(url);
+    currWeatherData = await response.json();
+  } catch(err) {
+    console.log('Error: Unable to fetch weather data - ', err);
+  }
+
+  console.log(currWeatherData);
+  return currWeatherData;
+}
+
+async function getCurrWeatherByCoords(latitude, longitude) {
+  const url = getAPIWeatherURLByCoords(latitude, longitude);
+  var currWeatherData = {};
+
+  try {
+    const response = await fetch(url);
+    currWeatherData = await response.json();
+  } catch(err) {
+    console.log('Error: Unable to fetch weather data - ', err);
+  }
 
   console.log(currWeatherData);
   return currWeatherData;
@@ -19,11 +48,37 @@ async function getCurrWeather(location) {
 
 async function getCurrForecast(location) {
   const url = getAPIForecastURL(location);
-  const response = await fetch(url);
-  const currForecastData = await response.json();
+  var currForecastData = {};
+
+  try {
+    const response = await fetch(url);
+    currForecastData = await response.json();
+  } catch(err) {
+    console.log('Error: Unable to fetch forecast data - ', err);
+  }
 
   console.log(currForecastData);
   return currForecastData;
 }
 
-export {getCurrWeather, getCurrForecast};
+async function getCurrForecastByCoords(latitude, longitude) {
+  const url = getAPIForecastURLByCoords(latitude, longitude);
+  var currForecastData = {};
+
+  try {
+    const response = await fetch(url);
+    currForecastData = await response.json();
+  } catch(err) {
+    console.log('Error: Unable to fetch forecast data - ', err);
+  }
+
+  console.log(currForecastData);
+  return currForecastData;
+}
+
+export {
+  getCurrWeather,
+  getCurrWeatherByCoords,
+  getCurrForecast,
+  getCurrForecastByCoords
+};
