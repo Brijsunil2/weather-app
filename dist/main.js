@@ -1,1 +1,1 @@
-alert("hello");
+(()=>{"use strict";fetch("http://api.openweathermap.org/data/2.5/weather?q=London,uk&APPID=37faff95420ed4780f103a874897a346").then((e=>{console.log(e)}))})();
