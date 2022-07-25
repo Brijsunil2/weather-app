@@ -16,6 +16,10 @@
     color: #fff;
     font-size: 26px;
     font-weight: bolder;
+
+    &:hover {
+      color: #9ee0fc;
+    }
   }
 }
 
@@ -24,6 +28,12 @@
   padding: 20px;
   text-align: center;
   color: #fff;
+  margin-top: 10px;
+}
+
+body {
+  background-color: #aae6ff;
+  overflow: auto;
 }
 
 .body-container {
@@ -32,11 +42,11 @@
   text-align: center;
   align-items: center;
   flex-direction: column;
-
+  background-color: #aae6ff;
 
   & .header-two {
     padding: 5px 15px;
-    margin-top: 10px;
+    margin-top: 20px;
     background-color: #f7f7f7;
   }
 }
@@ -49,11 +59,13 @@
 .weather-container {
   background-color: #aae6ff;
   padding: 20px;
-  width: 240px;
+  width: 250px;
+  overflow: auto;
 
   & input {
     &[type=text] {
       height: 20px; 
+      background-color: #f7f7f7;
 
       &:invalid {
         outline: 2px solid red;
@@ -64,11 +76,35 @@
       padding: 3px 5px;
     }
   }
+
+  & > .condition-label {
+    padding-bottom: 6px;
+  }
+
+  &:hover {
+    background-color: #9ee0fc;
+  }
 }
 
 .forecast-container {
   background-color: #aae6ff;
   padding: 20px;
-  margin: 20px 0;
-  visibility: hidden;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: #9ee0fc;
+  }
 }
+
+footer {
+  width: 100%;
+  clear: both;
+  position: relative;
+  bottom: 0;
+  background-color: #323643;
+  text-align: center;
+  color: #fff;
+  padding: 10px 0;
+  margin-top: 100px;
+}
+

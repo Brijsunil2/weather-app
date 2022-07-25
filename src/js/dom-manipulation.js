@@ -59,6 +59,38 @@ function updateWeather(data) {
   document.querySelector('.temperature-label').textContent = Math.round(utils.kelvinToCelsius(data.weatherData.main.temp)) + '\u00B0C';
   document.querySelector('.weather-container img').src = buildWeatherIconURL(data.weatherData.weather[0].icon);
   document.querySelector('.condition-label').textContent = data.weatherData.weather[0].description;
+
+  const forecastList = data.forecastData.list;
+
+  var colCounter = 1;
+  forecastList.forEach((forecast, i) => {
+    if (forecast.dt_txt.split(" ")[1] == "15:00:00") {
+      const colQuery = `.forecast-row .col-${colCounter}`;
+      const currQuery = document.querySelector(colQuery);
+      currQuery.textContent = "";
+      
+      var newDiv = document.createElement('div');
+      var dateEle = document.createElement('h3');
+      var tempEle = document.createElement('h4');
+      var imgEle = document.createElement('img');
+      var descEle = document.createElement('h6');
+
+      const date = new Date(forecast.dt_txt);
+      dateEle.textContent = days[date.getDay()];
+      tempEle.textContent = Math.round(utils.kelvinToCelsius(forecast.main.temp)) + '\u00B0C';
+      imgEle.src = buildWeatherIconURL(forecast.weather[0].icon);
+      imgEle.alt = forecast.weather[0].description + ' image';
+      descEle.textContent = forecast.weather[0].description;
+
+      newDiv.appendChild(dateEle);
+      newDiv.appendChild(tempEle);
+      newDiv.appendChild(imgEle);
+      newDiv.appendChild(descEle);
+      currQuery.appendChild(newDiv);
+
+      colCounter = colCounter + 1;
+    }
+  });
 }
 
 export {
