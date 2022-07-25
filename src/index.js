@@ -7,7 +7,8 @@ import './css/main.scss';
 run();
 
 async function run() {
-  var location = 'London,uk';
+  var location = 'London,UK';
+  setInterval(domTools.updateDate, 1000);
 
   const coords = await userLocation.getLocationLatLng();
   const weatherData = await apicalls.getCurrWeatherByCoords(coords.latitude, coords.longitude);
@@ -21,6 +22,6 @@ async function run() {
     forcastData: forcastData
   };
 
+  domTools.updateWeather(data);
   console.log(data);
-  setInterval(domTools.updateDate, 1000);
 }

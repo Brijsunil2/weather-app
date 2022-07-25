@@ -9,28 +9,39 @@
 </head>
 
 <body>
-  <div id="header-container">
-    <h3>Weather App</h2>
+  <div class="header-container">
+    <a href="">Weather App</a>
+    <div class="date-container">
+      <h3 class="date-label"></h3>
+      <h4 class="time-label"></h4>
+    </div>
   </div>
 
-  <div id="body-container">
-    <div id="weather-container">
-      <h2 class="location-label">London,uk</h2>
-      <h3 class="temperature-label">0 &#176;C</h3>
+  <div class="body-container">
+    <h2 class="header-two border-a">Current Weather</h2>
+    <div class="weather-container border-a">
+      <h2 class="location-label"></h2>
+      <h3 class="temperature-label"></h3>
       <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather image">
-      
-      <input type="text" name="location" id="location-input" required>
+      <h5 class="condition-label"></h5>
+
+      <input type="text" name="location" id="location-input" pattern="^$|([a-zA-z]+,[a-zA-z]{2})" placeholder="London,UK">
       <input type="button" value="Enter">
     </div>
 
-    <div id="date-container">
-      <h2 class="date-label"></h2>
-      <h3 class="time-label"></h3>
+    <h2 class="header-two border-a">Five Day Forecast</h2>
+    <div class="forecast-container border-a">
+      <table>
+        <tr class="forecast-row">
+          <td class="col-1"></td>
+          <td class="col-2"></td>
+          <td class="col-3"></td>
+          <td class="col-4"></td>
+          <td class="col-5"></td>
+        </tr>
+      </table>
     </div>
 
-    <div id="forecast-container">
-
-    </div>
   </div>
 </body>
 </html>
