@@ -62,27 +62,36 @@ body {
   width: 250px;
   overflow: auto;
 
-  & input {
-    &[type=text] {
-      height: 20px; 
-      background-color: #f7f7f7;
+  
+  .searchbar-container {
+    input {
+      &[type=text] {
+        padding: 0.3em;
+        border: none;
 
-      &:invalid {
-        outline: 2px solid red;
+        &:invalid {
+          outline: 1px solid red;
+        }
+
+        &:focus {
+          outline: none;
+        }
       }
-    }
 
-    &[type=button] {
-      padding: 3px 5px;
+      &[type=button] {
+        padding: 0.3em;
+        background-color: white;
+        border: none;
+
+        &:hover {
+          background-color: rgb(221, 221, 221);
+        }
+      }
     }
   }
 
   & > .condition-label {
     padding-bottom: 6px;
-  }
-
-  &:hover {
-    background-color: #9ee0fc;
   }
 }
 
@@ -90,10 +99,6 @@ body {
   background-color: #aae6ff;
   padding: 20px;
   margin-bottom: 20px;
-
-  &:hover {
-    background-color: #9ee0fc;
-  }
 }
 
 footer {

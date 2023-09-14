@@ -1,19 +1,17 @@
-const key = '37faff95420ed4780f103a874897a346';
-
 function getAPIWeatherURL(location) {
-  return `https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${key}`;
+  return `https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${process.env.WEATHER_API_KEY}`;
 }
 
 function getAPIForecastURL(location) {
-  return `https://api.openweathermap.org/data/2.5/forecast?q=${location}&APPID=${key}`;
+  return `https://api.openweathermap.org/data/2.5/forecast?q=${location}&APPID=${process.env.WEATHER_API_KEY}`;
 }
 
 function getAPIWeatherURLByCoords(latitude, longitude) {
-  return `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}`;
+  return `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${process.env.WEATHER_API_KEY}`;
 }
 
 function getAPIForecastURLByCoords(latitude, longitude) {
-  return `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${key}`;
+  return `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${process.env.WEATHER_API_KEY}`;
 }
 
 async function getCurrWeather(location) {

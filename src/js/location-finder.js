@@ -11,6 +11,7 @@ function getLocationLatLngPromise() {
 
 async function getLocationLatLng() {
   var position = await getLocationLatLngPromise();
+  console.log(position.coords.accuracy)
   return {latitude: position.coords.latitude, longitude: position.coords.longitude};
 }
 
