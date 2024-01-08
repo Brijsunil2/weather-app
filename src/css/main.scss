@@ -52,12 +52,12 @@ body {
 }
 
 .border-a {
-  border: solid #f7f7f7;
+  border: solid #f7f7f7 1px;
   border-radius: 8px;
 }
 
 .weather-container {
-  background-color: #aae6ff;
+  background-color: #c7edff;
   padding: 20px;
   width: 250px;
   overflow: auto;
@@ -96,7 +96,7 @@ body {
 }
 
 .forecast-container {
-  background-color: #aae6ff;
+  background-color: #c7edff;
   padding: 20px;
   margin-bottom: 20px;
 }
